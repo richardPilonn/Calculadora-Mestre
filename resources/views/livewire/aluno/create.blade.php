@@ -1,13 +1,30 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
 
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
 
     <div class="w-50">
+
+
+        @if (session()->has('success'))
+            <div class="alert alert-dismissible fade show" role="alert"
+                style="background-color: #ffe0b2; color:#ff5306; border-color: #ff5306">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        <style>
+            h3 {
+                -webkit-text-stroke: 1px rgb(0, 0, 0);
+                font-size: 36px;
+                color: #fff2c0;
+                text-shadow:
+                    3px 3px 0 #000,
+                    -1px -1px 0 #000,
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+            }
+        </style>
 
         <div class="card " style="border-radius: 10px">
             <div class="card-body" style="background-color: #ff914d; border-radius: 10px">
@@ -15,7 +32,9 @@
 
                     <div class="mt-4">
                         <div class="mb-4">
-                            <h3 class="text-center" style="color: #fff2c0; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> <strong>Cadastre-se Já!</strong>
+                            <h3 class="text-center"
+                                style="color: #fff2c0; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                                <strong>Cadastre-se Já!</strong>
                             </h3>
                         </div>
                     </div>
@@ -40,34 +59,24 @@
                                 <label for="rm" style="color: #fff2c0">RM</label>
                                 <input type="text" name="rm" id="rm" class="form-control"
                                     placeholder="****" wire:model.defer="rm">
-                                   <p style="color: #fff2c0"> <i class="bi bi-4-circle-fill"> dígitos no máximo</i></p>
+                                <p style="color: #fff2c0"> <i class="bi bi-4-circle-fill"> dígitos no máximo</i></p>
 
 
                             </div>
 
                             <div class="mt-4">
                                 <div class="mb-3">
-                                    <div class="d-flex justify-content-center dg-secondary mb-2">
+                                    <div class="d-grid gap-2 col-6 mx-auto">
                                         <button type="submit" class="btn"
                                             style="background-color: #ff5306; color:#fff2c0">
                                             <strong>Cadastrar</strong></button>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="mt-4">
-                                <div class="mb-4">
-                                    <p class="text-center" style="color: #fff2c0;">Cadastrar-se como
-                                        <a href="" style="color: #ff5306"><strong>Administrador</strong></a>
-                                    </p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>
