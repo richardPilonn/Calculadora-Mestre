@@ -28,13 +28,13 @@
 
         <div class="card " style="border-radius: 10px">
             <div class="card-body" style="background-color: #ff914d; border-radius: 10px">
-                <form wire:submit.prevent="store">
+                <form wire:submit.prevent="adminCadastrarAdmin">
 
                     <div class="mt-4">
                         <div class="mb-4">
                             <h3 class="text-center"
                                 style="color: #fff2c0; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-                                <strong>Cadastre-se Já!</strong>
+                                <strong>Cadastrar Novo Administrador</strong>
                             </h3>
                         </div>
                     </div>
@@ -49,17 +49,17 @@
 
 
                             <div class="mb-3">
-                                <label for="email_educacional" style="color: #fff2c0">Email Educacional</label>
-                                <input type="email" name="email_educacional" id="email_educacional"
-                                    class="form-control" wire:model.defer="email_educacional"
+                                <label for="email" style="color: #fff2c0">Email</label>
+                                <input type="email" name="email" id="email"
+                                    class="form-control" wire:model.defer="email"
                                     placeholder="Ex: fernanda@portalsesisp.org.br">
                             </div>
 
                             <div class="mb-3">
-                                <label for="rm" style="color: #fff2c0">RM</label>
-                                <input type="text" name="rm" id="rm" class="form-control"
-                                    placeholder="****" wire:model.defer="rm">
-                                <p style="color: #fff2c0"> <i class="bi bi-4-circle-fill"> dígitos no máximo</i></p>
+                                <label for="telefone" style="color: #fff2c0">Telefone</label>
+                                <input type="text" name="telefone" id="telefone" class="form-control"
+                                    placeholder="(**)*****-****" wire:model.defer="telefone">
+                                
 
 
                             </div>

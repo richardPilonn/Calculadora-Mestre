@@ -31,17 +31,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Perfil</a>
                 </li>
+
+                @if(Auth::user()->role === 'admin')
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Cadastrar Pessoas
+                        Cadastrar
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Cadastrar Aluno</a></li>
-                        <li><a class="dropdown-item" href="#">Cadastrar Professor</a></li>
-                        <li><a class="dropdown-item" href="#">Cadastrar Administrador</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.aluno.create') }}">Aluno</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.professor.create') }}">Professor</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.admin.create') }}">Administrador</a></li>
                     </ul>
                 </li>
+                @endif
+
             </ul>
         </div>
     </div>

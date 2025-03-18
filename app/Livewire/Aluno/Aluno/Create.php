@@ -1,20 +1,16 @@
 <?php
 
-namespace App\Livewire\Aluno;
+namespace App\Livewire\Aluno\Aluno;
 
 use App\Models\Aluno;
 use Livewire\Component;
 
 class Create extends Component
 {
+
     public $nome;
     public $email_educacional;
     public $rm;
-
-    public function render()
-    {
-        return view('livewire.aluno.create');
-    }
 
     public function store (){
         Aluno::create([
@@ -24,5 +20,10 @@ class Create extends Component
         ]);
 
         session()->flash('success', 'Cadastro Realizado com sucesso!');
+    }
+
+    public function render()
+    {
+        return view('livewire.aluno.aluno.create');
     }
 }
