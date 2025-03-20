@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned()->nullable(false);
             $table->string('nome', 50)->nullable(false);
-            $table->string('email_educacional', 50)->nullable(false)->unique(true);
             $table->string('rm', 4)->nullable(false)->unique(true);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

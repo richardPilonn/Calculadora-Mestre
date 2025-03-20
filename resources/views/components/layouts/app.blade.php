@@ -15,7 +15,19 @@
 @if(Auth::check())
 <nav class="navbar navbar-expand-lg " style="background-color: #ff914d;">
     <div class="container-fluid" style="background-color: #ff914d">
+
+        @if(Auth::user()->role === 'aluno')
+        <a class="navbar-brand" href="{{ route('aluno.dashboard.dashboard') }}">Página Inicial</a>
+        @endif
+
+        @if(Auth::user()->role === 'admin')
+        <a class="navbar-brand" href="{{ route('admin.dashboard.dashboard') }}">Página Inicial</a>
+        @endif
+
+        @if(Auth::user()->role === 'professor')
         <a class="navbar-brand" href="#">Página Inicial</a>
+        @endif
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,9 +40,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Configurações</a>
                 </li>
+
+                @if(Auth::user()->role === 'aluno')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('aluno.perfil.perfil') }}">Perfil</a>
+                </li>
+                @endif
+
+                @if(Auth::user()->role === 'admin')
                 <li class="nav-item">
                     <a class="nav-link" href="#">Perfil</a>
                 </li>
+                @endif
+
+                @if(Auth::user()->role === 'professor')
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Perfil</a>
+                </li>
+                @endif
+
 
                 @if(Auth::user()->role === 'admin')
                 <li class="nav-item dropdown">

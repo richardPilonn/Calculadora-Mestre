@@ -49,9 +49,9 @@
 
 
                             <div class="mb-3">
-                                <label for="email_educacional" style="color: #fff2c0">Email Educacional</label>
-                                <input type="email" name="email_educacional" id="email_educacional"
-                                    class="form-control" wire:model.defer="email_educacional"
+                                <label for="email" style="color: #fff2c0">Email Educacional</label>
+                                <input type="email" name="email" id="email"
+                                    class="form-control" wire:model.defer="email"
                                     placeholder="Ex: fernanda@portalsesisp.org.br">
                             </div>
 
@@ -60,6 +60,15 @@
                                 <input type="text" name="rm" id="rm" class="form-control"
                                     placeholder="****" wire:model.defer="rm">
                                 <p style="color: #fff2c0"> <i class="bi bi-4-circle-fill"> dígitos no máximo</i></p>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label" style="color: #fff2c0">Senha</label>
+                                    <input type="password" id="password" wire:model="password" class="form-control"
+                                        placeholder="Digite sua senha">
+                                    @error('password')
+                                        <span class="text-danger small">{{ $message }}</span>
+                                    @enderror
+                                </div>
 
 
                             </div>

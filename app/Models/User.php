@@ -21,7 +21,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
         'role'
@@ -57,5 +56,11 @@ class User extends Authenticatable
     }
     public function isAluno(){
         return $this->role == self::ROLE_ALUNO;
+    }
+
+
+    public function aluno()
+    {
+        return $this->hasOne(Aluno::class);
     }
 }
